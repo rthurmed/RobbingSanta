@@ -102,13 +102,19 @@ shape = SubResource( 12 )
 
 [node name="ViewArea" type="Area2D" parent="."]
 rotation = 1.5708
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ViewArea"]
 shape = SubResource( 13 )
 
 [node name="Light2D" type="Light2D" parent="ViewArea"]
-position = Vector2( 0, 0.000236511 )
 rotation = -1.5708
 texture = ExtResource( 3 )
 offset = Vector2( 0, 65 )
 shadow_enabled = true
+
+[node name="Aim" type="Node2D" parent="ViewArea"]
+position = Vector2( 13, -4.673e-05 )
+rotation = -1.5708
+[connection signal="body_entered" from="ViewArea" to="." method="_on_ViewArea_body_entered"]
+[connection signal="body_exited" from="ViewArea" to="." method="_on_ViewArea_body_exited"]

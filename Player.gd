@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 const SPEED = 100
 
+var found = false
+
 func _process(delta):
 	if Input.is_action_just_released("quit"):
 		get_tree().quit()
@@ -10,6 +12,10 @@ func _process(delta):
 
 func _physics_process(delta):
 	var velocity = Vector2()
+	
+	if found:
+		$AnimatedSprite.play("idle")
+		return
 	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -27,3 +33,7 @@ func _physics_process(delta):
 		$AnimatedSprite.play("idle")
 	else:
 		$AnimatedSprite.play("down")
+
+
+func _on_Elf_playerfound():
+	found = true
