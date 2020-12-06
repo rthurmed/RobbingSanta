@@ -3,6 +3,9 @@ extends KinematicBody2D
 const SPEED = 50
 var follow
 
+# Angle to look at when dont have a follow path
+export var facing_at = 0.0
+
 var facing = 0.0
 var space_state
 var check_for_player = false
@@ -31,14 +34,16 @@ func _physics_process(delta):
 			emit_signal("playerfound")
 			return
 	
-	var initial = global_position
-	
 	# Do path
 	if follow:
+		var initial = global_position
 		follow.set_offset(follow.get_offset() + SPEED * delta)
+		facing = global_position.angle_to_point(initial)	
+	else:
+		facing = facing_at
 	
 	# Rotate view cone
-	facing = global_position.angle_to_point(initial)
+	
 	$ViewArea.rotation = facing
 	
 	# Rotate sprite
