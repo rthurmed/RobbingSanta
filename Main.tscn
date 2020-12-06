@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/block-spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -60,7 +60,7 @@ vertices = PoolVector2Array( 32, 48, 0, 48, 0, 0, 32, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=9]
-polygon = PoolVector2Array( 32, 48, 0, 48, 0, 0, 32, 0 )
+polygon = PoolVector2Array( 31.9476, 39.8587, 0, 39.8587, 0, 0, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
 points = PoolVector2Array( 32, 48, 0, 48, 0, 0, 32, 0 )
@@ -333,6 +333,11 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 14/shapes = [  ]
 14/z_index = 0
 
+[sub_resource type="Curve2D" id=21]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 522, 117, 0, 0, 0, 0, 522, 262, 0, 0, 0, 0, 534, 262, 0, 0, 0, 0, 534, 117, 0, 0, 0, 0, 523, 117 )
+}
+
 [node name="Main" type="Node2D"]
 
 [node name="GroundTileMap" type="TileMap" parent="."]
@@ -370,7 +375,15 @@ position = Vector2( 658, 77 )
 [node name="Present4" parent="Presents" instance=ExtResource( 3 )]
 position = Vector2( 861, 356 )
 
-[node name="Elfs" type="Node" parent="."]
+[node name="Paths" type="Node" parent="."]
 
-[node name="Elf" parent="Elfs" instance=ExtResource( 4 )]
-position = Vector2( 528, 132 )
+[node name="Path2D1" type="Path2D" parent="Paths"]
+curve = SubResource( 21 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D1"]
+position = Vector2( 522, 117 )
+rotation = 1.97247
+rotate = false
+
+[node name="Elf" parent="Paths/Path2D1/PathFollow2D" instance=ExtResource( 4 )]
+rotation = -1.97247
