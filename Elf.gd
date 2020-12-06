@@ -26,6 +26,7 @@ func _physics_process(delta):
 		var result = space_state.intersect_ray(global_position, player.global_position, [self])
 		if result.collider.name == "Player":
 			$AnimatedSprite.play("scream")
+			$ViewArea.rotation = player.global_position.angle_to_point(global_position)
 			scared = true
 			emit_signal("playerfound")
 			return
