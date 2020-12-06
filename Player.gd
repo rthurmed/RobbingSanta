@@ -3,6 +3,7 @@ extends KinematicBody2D
 const SPEED = 100
 
 onready var gift_count = get_tree().get_current_scene().get_node("Gifts").get_child_count()
+onready var status = $CanvasLayer/Status
 var gifts_picked = 0
 var found = false
 
@@ -14,6 +15,8 @@ func _process(delta):
 
 func _physics_process(delta):
 	var velocity = Vector2()
+	
+	status.text = str(gifts_picked) + "/" + str(gift_count)
 	
 	if found:
 		$AnimatedSprite.play("idle")
@@ -36,13 +39,13 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite.play("down")
 
-
 func _on_Elf_playerfound():
 	found = true
 
 func _on_Gift_giftpicked():
 	gifts_picked += 1
-	print(gifts_picked, "/", gift_count)
-	if gifts_picked >= gift_count:
-		# Win
-		pass
+
+func _on_Building_body_exited(body):
+	if body.name == "Player" and gifts_picked >= gift_count:
+		$CanvasLayer/YOUWIN.visible = true
+		found = true

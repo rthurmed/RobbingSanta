@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/thief-spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/FFFFORWA.TTF" type="DynamicFontData" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -32,15 +33,61 @@ animations = [ {
 radius = 6.83831
 height = 10.8135
 
+[sub_resource type="DynamicFont" id=6]
+size = 8
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
 animation = "down"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 5 )
 
 [node name="YSort" type="YSort" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="YOUWIN" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_top = 0.9
+anchor_right = 0.9
+anchor_bottom = 0.9
+margin_left = 13.9667
+margin_top = -221.817
+margin_right = 34.9667
+margin_bottom = -86.9426
+custom_fonts/font = SubResource( 6 )
+text = "YOU WIN!
+
+Press ESC to QUIT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Status" type="Label" parent="CanvasLayer"]
+anchor_top = 0.925
+anchor_bottom = 0.935
+margin_left = 11.6296
+margin_top = -5.9249
+margin_right = 100.63
+margin_bottom = 8.07512
+custom_fonts/font = SubResource( 6 )
+text = "0/0"
+valign = 2
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
