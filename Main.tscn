@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/block-spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Present.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Gift.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Elf.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
@@ -393,19 +393,31 @@ current = true
 smoothing_enabled = true
 smoothing_speed = 3.0
 
-[node name="Presents" type="Node" parent="."]
+[node name="Gifts" type="Node" parent="."]
 
-[node name="Present1" parent="Presents" instance=ExtResource( 3 )]
+[node name="Gift1" parent="Gifts" instance=ExtResource( 3 )]
 position = Vector2( 391, 72 )
 
-[node name="Present2" parent="Presents" instance=ExtResource( 3 )]
+[node name="Gift2" parent="Gifts" instance=ExtResource( 3 )]
 position = Vector2( 562, 342 )
 
-[node name="Present3" parent="Presents" instance=ExtResource( 3 )]
+[node name="Gift3" parent="Gifts" instance=ExtResource( 3 )]
 position = Vector2( 658, 77 )
 
-[node name="Present4" parent="Presents" instance=ExtResource( 3 )]
+[node name="Gift4" parent="Gifts" instance=ExtResource( 3 )]
 position = Vector2( 861, 356 )
+
+[node name="Gift5" parent="Gifts" instance=ExtResource( 3 )]
+position = Vector2( 162, 315 )
+
+[node name="Gift6" parent="Gifts" instance=ExtResource( 3 )]
+position = Vector2( 561, 95 )
+
+[node name="Gift7" parent="Gifts" instance=ExtResource( 3 )]
+position = Vector2( 939, 77 )
+
+[node name="Gift8" parent="Gifts" instance=ExtResource( 3 )]
+position = Vector2( 167, 502 )
 
 [node name="Paths" type="Node" parent="."]
 
@@ -490,6 +502,14 @@ position = Vector2( 929, 509 )
 
 [node name="Elf" parent="StadingElfs/Node2D2" instance=ExtResource( 4 )]
 facing_at = 180.0
+[connection signal="giftpicked" from="Gifts/Gift1" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift2" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift3" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift4" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift5" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift6" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift7" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift8" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="playerfound" from="Paths/Path2D1/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D2/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D3/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
