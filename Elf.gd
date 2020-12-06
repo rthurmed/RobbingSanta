@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 const SPEED = 50
 var follow
@@ -80,3 +80,10 @@ func _on_ViewArea_body_entered(body):
 func _on_ViewArea_body_exited(body):
 	if body.name == "Player":
 		check_for_player = false
+
+func _on_Elf_body_entered(body):
+	if body.name == "Player":
+		$AnimatedSprite.play("scream")
+		$ViewArea.rotation = player.global_position.angle_to_point(global_position)
+		scared = true
+		emit_signal("playerfound")

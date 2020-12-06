@@ -89,7 +89,7 @@ height = 10.0
 [sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 0, 0, 80, 60, 115, 0, 80, -60 )
 
-[node name="Elf" type="KinematicBody2D"]
+[node name="Elf" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -116,5 +116,6 @@ shadow_enabled = true
 [node name="Aim" type="Node2D" parent="ViewArea"]
 position = Vector2( 13, -4.673e-05 )
 rotation = -1.5708
+[connection signal="body_entered" from="." to="." method="_on_Elf_body_entered"]
 [connection signal="body_entered" from="ViewArea" to="." method="_on_ViewArea_body_entered"]
 [connection signal="body_exited" from="ViewArea" to="." method="_on_ViewArea_body_exited"]
