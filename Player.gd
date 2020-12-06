@@ -40,6 +40,7 @@ func _physics_process(delta):
 		$AnimatedSprite.play("down")
 
 func _on_Elf_playerfound():
+	$ResetTimer.start()
 	found = true
 
 func _on_Gift_giftpicked():
@@ -49,3 +50,6 @@ func _on_Building_body_exited(body):
 	if body.name == "Player" and gifts_picked >= gift_count:
 		$CanvasLayer/YOUWIN.visible = true
 		found = true
+
+func _on_ResetTimer_timeout():
+	get_tree().reload_current_scene()
