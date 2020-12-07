@@ -347,35 +347,35 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 15/shapes = [  ]
 15/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 440, 280 )
 
-[sub_resource type="Curve2D" id=21]
+[sub_resource type="Curve2D" id=22]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 522, 117, 0, 0, 0, 0, 522, 262, 0, 0, 0, 0, 534, 262, 0, 0, 0, 0, 534, 117, 0, 0, 0, 0, 523, 117 )
 }
 
-[sub_resource type="Curve2D" id=22]
+[sub_resource type="Curve2D" id=23]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 582, 158, 0, 0, 0, 0, 871, 158, 0, 0, 0, 0, 871, 277, 0, 0, 0, 0, 859, 277, 0, 0, 0, 0, 858, 166, 0, 0, 0, 0, 582, 166, 0, 0, 0, 0, 582, 161 )
 }
 
-[sub_resource type="Curve2D" id=23]
+[sub_resource type="Curve2D" id=24]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 760, 466, 0, 0, 0, 0, 816, 490, 0, 0, 0, 0, 908, 439, 0, 0, 0, 0, 908, 362, 0, 0, 0, 0, 840, 362, 0, 0, 0, 0, 812, 422, 0, 0, 0, 0, 760, 422, 0, 0, 0, 0, 760, 466 )
 }
 
-[sub_resource type="Curve2D" id=24]
+[sub_resource type="Curve2D" id=25]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 533, 461, 0, 0, 0, 0, 533, 342, 0, 0, 0, 0, 400, 342, 0, 0, 0, 0, 304, 342, 0, 0, 0, 0, 399, 462, 0, 0, 0, 0, 533, 461 )
 }
 
-[sub_resource type="Curve2D" id=25]
+[sub_resource type="Curve2D" id=26]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 665, 509, 0, 0, 0, 0, 665, 299, 0, 0, 0, 0, 619, 299, 0, 0, 0, 0, 620, 509, 0, 0, 0, 0, 665, 509 )
 }
 
-[sub_resource type="Curve2D" id=26]
+[sub_resource type="Curve2D" id=27]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 281, 74, 0, 0, 0, 0, 281, 94, 0, 0, 0, 0, 584, 94, 0, 0, 0, 0, 584, 74, 0, 0, 0, 0, 281, 74 )
 }
@@ -407,7 +407,7 @@ position = Vector2( 114, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building"]
 position = Vector2( 440, 279 )
-shape = SubResource( 27 )
+shape = SubResource( 21 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 181, -1 )
@@ -446,7 +446,7 @@ position = Vector2( 167, 502 )
 [node name="Paths" type="Node" parent="."]
 
 [node name="Path2D1" type="Path2D" parent="Paths"]
-curve = SubResource( 21 )
+curve = SubResource( 22 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D1"]
 position = Vector2( 522, 117 )
@@ -457,7 +457,7 @@ rotate = false
 rotation = -1.97247
 
 [node name="Path2D2" type="Path2D" parent="Paths"]
-curve = SubResource( 22 )
+curve = SubResource( 23 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D2"]
 position = Vector2( 582, 158 )
@@ -466,7 +466,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D2/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="Path2D3" type="Path2D" parent="Paths"]
-curve = SubResource( 23 )
+curve = SubResource( 24 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D3"]
 position = Vector2( 760, 466 )
@@ -476,7 +476,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D3/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="Path2D4" type="Path2D" parent="Paths"]
-curve = SubResource( 24 )
+curve = SubResource( 25 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D4"]
 position = Vector2( 533, 461 )
@@ -494,7 +494,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D4/PathFollow2D2" instance=ExtResource( 4 )]
 
 [node name="Path2D5" type="Path2D" parent="Paths"]
-curve = SubResource( 25 )
+curve = SubResource( 26 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D5"]
 position = Vector2( 665, 509 )
@@ -504,7 +504,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D5/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="Path2D6" type="Path2D" parent="Paths"]
-curve = SubResource( 26 )
+curve = SubResource( 27 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D6"]
 position = Vector2( 281, 74 )

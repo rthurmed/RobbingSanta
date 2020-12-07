@@ -17,6 +17,7 @@ signal playerfound
 
 func _ready():
 	space_state = get_world_2d().direct_space_state
+	facing = facing_at
 	if get_parent() is PathFollow2D:
 		follow = get_parent()
 
@@ -28,22 +29,22 @@ func _physics_process(delta):
 	if check_for_player:
 		var result = space_state.intersect_ray(global_position, player.global_position, [self])
 		if result.collider.name == "Player":
+			# Look at the player
 			$AnimatedSprite.play("scream")
 			$ViewArea.rotation = player.global_position.angle_to_point(global_position)
 			scared = true
+			# Triggers gameover
 			emit_signal("playerfound")
 			return
 	
+	var initial = global_position
+	
 	# Do path
 	if follow:
-		var initial = global_position
 		follow.set_offset(follow.get_offset() + SPEED * delta)
-		facing = global_position.angle_to_point(initial)	
-	else:
-		facing = facing_at
+		facing = global_position.angle_to_point(initial)
 	
 	# Rotate view cone
-	
 	$ViewArea.rotation = facing
 	
 	# Rotate sprite
@@ -54,25 +55,28 @@ func _physics_process(delta):
 	# -45 < X < 45		right
 	# 45 < X < 135		down
 	
+	var animate = "side"
+	var flip = false
+	
 	# Left
-	if 135 > deg_facing || deg_facing < -135:
-		$AnimatedSprite.play("side")
-		$AnimatedSprite.flip_h = true
-	
+	if deg_facing > 135 || deg_facing <= -135:
+		flip = true
 	# Up
-	if -135 < deg_facing && deg_facing < -45:
-		$AnimatedSprite.play("up")
-		$AnimatedSprite.flip_h = false
-	
+	elif -135 < deg_facing && deg_facing <= -45:
+		animate = "up"
 	# Right
-	if -45 < deg_facing && deg_facing < 45:
-		$AnimatedSprite.play("side")
-		$AnimatedSprite.flip_h = false
-	
+	elif -45 < deg_facing && deg_facing <= 45:
+		flip = false
 	# Down
-	if 45 < deg_facing && deg_facing < 135:
-		$AnimatedSprite.play("down")
-		$AnimatedSprite.flip_h = false
+	elif 45 < deg_facing && deg_facing <= 135:
+		animate = "down"
+	
+	if initial == global_position:
+		animate += "idle"
+	
+	if $AnimatedSprite.animation != animate:
+		$AnimatedSprite.play(animate)
+		$AnimatedSprite.flip_h = flip
 
 func _on_ViewArea_body_entered(body):
 	check_for_player = body.name == "Player"
