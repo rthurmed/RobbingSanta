@@ -26,7 +26,7 @@ func _physics_process(delta):
 		return
 	
 	if gifts_picked < gift_count:
-		status.text = str(gifts_picked) + "/" + str(gift_count)
+		status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
 	else:
 		status.text = "Get out of the building"
 	
