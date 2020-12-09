@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/thief-spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/FFFFORWA.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://default_font.tres" type="DynamicFont" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -10,57 +10,48 @@ region = Rect2( 0, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 24 )
+region = Rect2( 48, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 16, 24 )
-
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "win",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 6.83831
 height = 10.8135
-
-[sub_resource type="DynamicFont" id=6]
-size = 8
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-extra_spacing_char = 1
-font_data = ExtResource( 4 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -75,7 +66,7 @@ margin_left = 13.9667
 margin_top = -221.817
 margin_right = 34.9667
 margin_bottom = -86.9426
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = ExtResource( 3 )
 text = "YOU WIN!
 
 Press ESC to QUIT"
@@ -92,7 +83,7 @@ margin_left = 11.6296
 margin_top = -5.9249
 margin_right = 100.63
 margin_bottom = 8.07512
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = ExtResource( 3 )
 text = "0/0"
 valign = 2
 uppercase = true
