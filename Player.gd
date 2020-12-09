@@ -28,7 +28,7 @@ func _physics_process(delta):
 	if gifts_picked < gift_count:
 		status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
 	else:
-		status.text = "Get out of the building"
+		status.text = "Go to the gate!"
 	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -55,11 +55,12 @@ func _on_Elf_playerfound():
 func _on_Gift_giftpicked():
 	gifts_picked += 1
 
-func _on_Building_body_exited(body):
+func _on_ResetTimer_timeout():
+	get_tree().reload_current_scene()
+
+
+func _on_Gate_body_entered(body):
 	if body.name == "Player" and gifts_picked >= gift_count:
 		$CanvasLayer/YOUWIN.visible = true
 		status.text = ""
 		win = true
-
-func _on_ResetTimer_timeout():
-	get_tree().reload_current_scene()
