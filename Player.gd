@@ -13,6 +13,8 @@ func _process(delta):
 		get_tree().quit()
 	if Input.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
+	if Input.is_action_just_released("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 
 func _physics_process(delta):
 	var velocity = Vector2()
