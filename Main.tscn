@@ -1,656 +1,45 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/block-spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/foregroundtilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Gift.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Elf.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/Evasion.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=6]
+[ext_resource path="res://assets/obstacletilemap.tres" type="TileSet" id=7]
 
-[sub_resource type="TileSet" id=1]
-0/name = "block-spritesheet.png 0"
-0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "block-spritesheet.png 1"
-1/texture = ExtResource( 1 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 16, 16, 16 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-
-[sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="NavigationPolygon" id=5]
-vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=6]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="NavigationPolygon" id=8]
-vertices = PoolVector2Array( 32, 48, 0, 48, 0, 0, 32, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=9]
-polygon = PoolVector2Array( 31.9476, 39.8587, 0, 39.8587, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 32, 48, 0, 48, 0, 0, 32, 0 )
-
-[sub_resource type="NavigationPolygon" id=11]
-vertices = PoolVector2Array( 32, 16, 16, 16, 16, 0, 32, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=12]
-polygon = PoolVector2Array( 32, 16, 16, 16, 16, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 32, 16, 16, 16, 16, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=14]
-points = PoolVector2Array( 48, 16, 0, 16, 0, 0, 48, 0 )
-
-[sub_resource type="NavigationPolygon" id=15]
-vertices = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=16]
-polygon = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=17]
-points = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
-
-[sub_resource type="NavigationPolygon" id=18]
-vertices = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=19]
-polygon = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=20]
-points = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
-
-[sub_resource type="NavigationPolygon" id=21]
-vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=22]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=23]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="NavigationPolygon" id=24]
-vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=25]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=26]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="NavigationPolygon" id=27]
-vertices = PoolVector2Array( 48, 64, 0, 64, 0, 0, 48, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=28]
-polygon = PoolVector2Array( 48, 64, 0, 64, 0, 0, 48, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=29]
-points = PoolVector2Array( 48, 64, 0, 64, 0, 0, 48, 0 )
-
-[sub_resource type="NavigationPolygon" id=30]
-vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=31]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=32]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="NavigationPolygon" id=33]
-vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=34]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=35]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="NavigationPolygon" id=36]
-vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=37]
-polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=38]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="TileSet" id=39]
-0/name = "block-spritesheet.png 0"
-0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 16, 0, 16, 16 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 3 )
-0/navigation_offset = Vector2( 0, 0 )
-0/navigation = SubResource( 2 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 4 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "block-spritesheet.png 1"
-1/texture = ExtResource( 1 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 32, 0, 16, 16 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/occluder = SubResource( 6 )
-1/navigation_offset = Vector2( 0, 0 )
-1/navigation = SubResource( 5 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 7 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-2/name = "block-spritesheet.png 2"
-2/texture = ExtResource( 1 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 16, 16, 16, 16 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
-2/z_index = 0
-3/name = "block-spritesheet.png 3"
-3/texture = ExtResource( 1 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 32, 16, 16, 16 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
-3/z_index = 0
-6/name = "block-spritesheet.png 6"
-6/texture = ExtResource( 1 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 112, 0, 16, 16 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/occluder = SubResource( 31 )
-6/navigation_offset = Vector2( 0, 0 )
-6/navigation = SubResource( 30 )
-6/shape_offset = Vector2( 0, 0 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 32 )
-6/shape_one_way = false
-6/shape_one_way_margin = 1.0
-6/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 32 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-6/z_index = 0
-7/name = "block-spritesheet.png 7"
-7/texture = ExtResource( 1 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 48, 0, 16, 16 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/occluder = SubResource( 34 )
-7/navigation_offset = Vector2( 0, 0 )
-7/navigation = SubResource( 33 )
-7/shape_offset = Vector2( 0, 0 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 35 )
-7/shape_one_way = false
-7/shape_one_way_margin = 1.0
-7/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 35 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-7/z_index = 0
-8/name = "block-spritesheet.png 8"
-8/texture = ExtResource( 1 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 64, 0, 16, 16 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/occluder = SubResource( 37 )
-8/navigation_offset = Vector2( 0, 0 )
-8/navigation = SubResource( 36 )
-8/shape_offset = Vector2( 0, 0 )
-8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape = SubResource( 38 )
-8/shape_one_way = false
-8/shape_one_way_margin = 1.0
-8/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 38 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-8/z_index = 0
-9/name = "block-spritesheet.png 9"
-9/texture = ExtResource( 1 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 48, 16, 16, 16 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shape_offset = Vector2( 0, 0 )
-9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape_one_way = false
-9/shape_one_way_margin = 0.0
-9/shapes = [  ]
-9/z_index = 0
-10/name = "block-spritesheet.png 10"
-10/texture = ExtResource( 1 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 64, 16, 16, 16 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/navigation_offset = Vector2( 0, 0 )
-10/shape_offset = Vector2( 0, 0 )
-10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape_one_way = false
-10/shape_one_way_margin = 0.0
-10/shapes = [  ]
-10/z_index = 0
-11/name = "block-spritesheet.png 11"
-11/texture = ExtResource( 1 )
-11/tex_offset = Vector2( 0, 0 )
-11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 112, 16, 16, 16 )
-11/tile_mode = 0
-11/occluder_offset = Vector2( 0, 0 )
-11/navigation_offset = Vector2( 0, 0 )
-11/shape_offset = Vector2( 0, 0 )
-11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-11/shape_one_way = false
-11/shape_one_way_margin = 0.0
-11/shapes = [  ]
-11/z_index = 0
-12/name = "block-spritesheet.png 12"
-12/texture = ExtResource( 1 )
-12/tex_offset = Vector2( 0, 0 )
-12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 16, 32, 32, 64 )
-12/tile_mode = 0
-12/occluder_offset = Vector2( 0, 0 )
-12/occluder = SubResource( 9 )
-12/navigation_offset = Vector2( 0, 0 )
-12/navigation = SubResource( 8 )
-12/shape_offset = Vector2( 0, 0 )
-12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-12/shape = SubResource( 10 )
-12/shape_one_way = false
-12/shape_one_way_margin = 1.0
-12/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 10 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-12/z_index = 0
-13/name = "block-spritesheet.png 13"
-13/texture = ExtResource( 1 )
-13/tex_offset = Vector2( 0, 0 )
-13/modulate = Color( 1, 1, 1, 1 )
-13/region = Rect2( 0, 32, 16, 16 )
-13/tile_mode = 0
-13/occluder_offset = Vector2( 0, 0 )
-13/navigation_offset = Vector2( 0, 0 )
-13/shape_offset = Vector2( 0, 0 )
-13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-13/shape_one_way = false
-13/shape_one_way_margin = 0.0
-13/shapes = [  ]
-13/z_index = 0
-14/name = "block-spritesheet.png 14"
-14/texture = ExtResource( 1 )
-14/tex_offset = Vector2( 0, 0 )
-14/modulate = Color( 1, 1, 1, 1 )
-14/region = Rect2( 0, 48, 16, 16 )
-14/tile_mode = 0
-14/occluder_offset = Vector2( 0, 0 )
-14/navigation_offset = Vector2( 0, 0 )
-14/shape_offset = Vector2( 0, 0 )
-14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-14/shape_one_way = false
-14/shape_one_way_margin = 0.0
-14/shapes = [  ]
-14/z_index = 0
-15/name = "block-spritesheet.png 15"
-15/texture = ExtResource( 1 )
-15/tex_offset = Vector2( 0, 0 )
-15/modulate = Color( 1, 1, 1, 1 )
-15/region = Rect2( 96, 16, 16, 16 )
-15/tile_mode = 0
-15/occluder_offset = Vector2( 0, 0 )
-15/navigation_offset = Vector2( 0, 0 )
-15/shape_offset = Vector2( 0, 0 )
-15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-15/shape_one_way = false
-15/shape_one_way_margin = 0.0
-15/shapes = [  ]
-15/z_index = 0
-16/name = "block-spritesheet.png 16"
-16/texture = ExtResource( 1 )
-16/tex_offset = Vector2( 0, 0 )
-16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 80, 80, 48, 16 )
-16/tile_mode = 0
-16/occluder_offset = Vector2( 0, 0 )
-16/navigation_offset = Vector2( 0, 0 )
-16/shape_offset = Vector2( 0, 0 )
-16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-16/shape_one_way = false
-16/shape_one_way_margin = 0.0
-16/shapes = [  ]
-16/z_index = 0
-17/name = "block-spritesheet.png 17"
-17/texture = ExtResource( 1 )
-17/tex_offset = Vector2( 0, 0 )
-17/modulate = Color( 1, 1, 1, 1 )
-17/region = Rect2( 80, 96, 48, 16 )
-17/tile_mode = 0
-17/occluder_offset = Vector2( 0, 0 )
-17/occluder = SubResource( 12 )
-17/navigation_offset = Vector2( 0, 0 )
-17/navigation = SubResource( 11 )
-17/shape_offset = Vector2( 0, 0 )
-17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-17/shape = SubResource( 13 )
-17/shape_one_way = false
-17/shape_one_way_margin = 1.0
-17/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 13 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-17/z_index = 0
-18/name = "block-spritesheet.png 18"
-18/texture = ExtResource( 1 )
-18/tex_offset = Vector2( 0, 0 )
-18/modulate = Color( 1, 1, 1, 1 )
-18/region = Rect2( 80, 48, 48, 32 )
-18/tile_mode = 0
-18/occluder_offset = Vector2( 0, 0 )
-18/navigation_offset = Vector2( 0, 0 )
-18/shape_offset = Vector2( 0, 0 )
-18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-18/shape = SubResource( 14 )
-18/shape_one_way = false
-18/shape_one_way_margin = 1.0
-18/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 14 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-18/z_index = 0
-19/name = "block-spritesheet.png 19"
-19/texture = ExtResource( 1 )
-19/tex_offset = Vector2( 0, 0 )
-19/modulate = Color( 1, 1, 1, 1 )
-19/region = Rect2( 48, 48, 32, 16 )
-19/tile_mode = 0
-19/occluder_offset = Vector2( 0, 0 )
-19/occluder = SubResource( 16 )
-19/navigation_offset = Vector2( 0, 0 )
-19/navigation = SubResource( 15 )
-19/shape_offset = Vector2( 0, 0 )
-19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-19/shape = SubResource( 17 )
-19/shape_one_way = false
-19/shape_one_way_margin = 1.0
-19/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 17 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-19/z_index = 0
-20/name = "block-spritesheet.png 20"
-20/texture = ExtResource( 1 )
-20/tex_offset = Vector2( 0, 0 )
-20/modulate = Color( 1, 1, 1, 1 )
-20/region = Rect2( 48, 80, 32, 16 )
-20/tile_mode = 0
-20/occluder_offset = Vector2( 0, 0 )
-20/occluder = SubResource( 19 )
-20/navigation_offset = Vector2( 0, 0 )
-20/navigation = SubResource( 18 )
-20/shape_offset = Vector2( 0, 0 )
-20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-20/shape = SubResource( 20 )
-20/shape_one_way = false
-20/shape_one_way_margin = 1.0
-20/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 20 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-20/z_index = 0
-21/name = "block-spritesheet.png 21"
-21/texture = ExtResource( 1 )
-21/tex_offset = Vector2( 0, 0 )
-21/modulate = Color( 1, 1, 1, 1 )
-21/region = Rect2( 80, 0, 16, 16 )
-21/tile_mode = 0
-21/occluder_offset = Vector2( 0, 0 )
-21/occluder = SubResource( 22 )
-21/navigation_offset = Vector2( 0, 0 )
-21/navigation = SubResource( 21 )
-21/shape_offset = Vector2( 0, 0 )
-21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-21/shape = SubResource( 23 )
-21/shape_one_way = false
-21/shape_one_way_margin = 1.0
-21/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 23 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-21/z_index = 0
-22/name = "block-spritesheet.png 22"
-22/texture = ExtResource( 1 )
-22/tex_offset = Vector2( 0, 0 )
-22/modulate = Color( 1, 1, 1, 1 )
-22/region = Rect2( 80, 16, 16, 16 )
-22/tile_mode = 0
-22/occluder_offset = Vector2( 0, 0 )
-22/occluder = SubResource( 25 )
-22/navigation_offset = Vector2( 0, 0 )
-22/navigation = SubResource( 24 )
-22/shape_offset = Vector2( 0, 0 )
-22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-22/shape = SubResource( 26 )
-22/shape_one_way = false
-22/shape_one_way_margin = 1.0
-22/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 26 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-22/z_index = 0
-23/name = "block-spritesheet.png 23"
-23/texture = ExtResource( 1 )
-23/tex_offset = Vector2( 0, 0 )
-23/modulate = Color( 1, 1, 1, 1 )
-23/region = Rect2( 80, 112, 48, 80 )
-23/tile_mode = 0
-23/occluder_offset = Vector2( 0, 0 )
-23/occluder = SubResource( 28 )
-23/navigation_offset = Vector2( 0, 0 )
-23/navigation = SubResource( 27 )
-23/shape_offset = Vector2( 0, 0 )
-23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-23/shape = SubResource( 29 )
-23/shape_one_way = false
-23/shape_one_way_margin = 1.0
-23/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 29 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-23/z_index = 0
-
-[sub_resource type="NavigationPolygon" id=40]
-vertices = PoolVector2Array( 48, 64, 0, 64, 0, 0, 48, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-
-[sub_resource type="OccluderPolygon2D" id=41]
-polygon = PoolVector2Array( 48, 64, 0, 64, 0, 0, 48, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=42]
-points = PoolVector2Array( 48, 64, 0, 64, 0, 0, 48, 0 )
-
-[sub_resource type="TileSet" id=43]
-0/name = "block-spritesheet.png 0"
-0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 80, 112, 48, 80 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 41 )
-0/navigation_offset = Vector2( 0, 0 )
-0/navigation = SubResource( 40 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 42 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 42 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 440, 280 )
 
-[sub_resource type="CircleShape2D" id=45]
+[sub_resource type="CircleShape2D" id=2]
 radius = 31.0161
 
-[sub_resource type="Curve2D" id=46]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 522, 117, 0, 0, 0, 0, 522, 262, 0, 0, 0, 0, 534, 262, 0, 0, 0, 0, 534, 117, 0, 0, 0, 0, 523, 117 )
 }
 
-[sub_resource type="Curve2D" id=47]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 582, 158, 0, 0, 0, 0, 871, 158, 0, 0, 0, 0, 871, 277, 0, 0, 0, 0, 859, 277, 0, 0, 0, 0, 858, 166, 0, 0, 0, 0, 582, 166, 0, 0, 0, 0, 582, 161 )
 }
 
-[sub_resource type="Curve2D" id=48]
+[sub_resource type="Curve2D" id=5]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 760, 466, 0, 0, 0, 0, 816, 490, 0, 0, 0, 0, 908, 439, 0, 0, 0, 0, 908, 362, 0, 0, 0, 0, 840, 362, 0, 0, 0, 0, 812, 422, 0, 0, 0, 0, 760, 422, 0, 0, 0, 0, 760, 466 )
 }
 
-[sub_resource type="Curve2D" id=49]
+[sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 533, 461, 0, 0, 0, 0, 533, 342, 0, 0, 0, 0, 400, 342, 0, 0, 0, 0, 304, 342, 0, 0, 0, 0, 399, 462, 0, 0, 0, 0, 533, 461 )
+"points": PoolVector2Array( 0, 0, 0, 0, 533, 461, 0, 0, 0, 0, 515, 342, 0, 0, 0, 0, 345, 342, 0, 0, 0, 0, 304, 437, 0, 0, 0, 0, 399, 462, 0, 0, 0, 0, 533, 461 )
 }
 
-[sub_resource type="Curve2D" id=50]
+[sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 665, 509, 0, 0, 0, 0, 665, 299, 0, 0, 0, 0, 619, 299, 0, 0, 0, 0, 620, 509, 0, 0, 0, 0, 665, 509 )
 }
 
-[sub_resource type="Curve2D" id=51]
+[sub_resource type="Curve2D" id=8]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 281, 74, 0, 0, 0, 0, 281, 94, 0, 0, 0, 0, 584, 94, 0, 0, 0, 0, 584, 74, 0, 0, 0, 0, 281, 74 )
 }
@@ -659,7 +48,7 @@ _data = {
 
 [node name="GroundTileMap" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
-tile_set = SubResource( 1 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0
@@ -669,7 +58,7 @@ tile_data = PoolIntArray( -2752504, 1, 0, -2752503, 1, 0, -2752502, 1, 0, -27525
 
 [node name="ObstacleTileMap" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
-tile_set = SubResource( 39 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 collision_layer = 3
@@ -679,7 +68,7 @@ tile_data = PoolIntArray( -1966088, 6, 0, -1966087, 6, 0, -1966086, 6, 0, -19660
 
 [node name="ForegroundTileMap" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
-tile_set = SubResource( 43 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 format = 1
@@ -691,13 +80,13 @@ position = Vector2( 114, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building"]
 position = Vector2( 440, 279 )
-shape = SubResource( 44 )
+shape = SubResource( 1 )
 
-[node name="Gate" type="Area2D" parent="."]
+[node name="Exit" type="Area2D" parent="."]
 position = Vector2( 314, 777 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
-shape = SubResource( 45 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 109, -23 )
@@ -736,7 +125,7 @@ position = Vector2( 167, 502 )
 [node name="Paths" type="Node" parent="."]
 
 [node name="Path2D1" type="Path2D" parent="Paths"]
-curve = SubResource( 46 )
+curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D1"]
 position = Vector2( 522, 117 )
@@ -747,7 +136,7 @@ rotate = false
 rotation = -1.97247
 
 [node name="Path2D2" type="Path2D" parent="Paths"]
-curve = SubResource( 47 )
+curve = SubResource( 4 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D2"]
 position = Vector2( 582, 158 )
@@ -756,7 +145,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D2/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="Path2D3" type="Path2D" parent="Paths"]
-curve = SubResource( 48 )
+curve = SubResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D3"]
 position = Vector2( 760, 466 )
@@ -766,7 +155,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D3/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="Path2D4" type="Path2D" parent="Paths"]
-curve = SubResource( 49 )
+curve = SubResource( 6 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D4"]
 position = Vector2( 533, 461 )
@@ -776,7 +165,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D4/PathFollow2D1" instance=ExtResource( 4 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Paths/Path2D4"]
-position = Vector2( 450.073, 342 )
+position = Vector2( 435.015, 342 )
 rotation = 0.00176417
 offset = 200.0
 rotate = false
@@ -784,7 +173,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D4/PathFollow2D2" instance=ExtResource( 4 )]
 
 [node name="Path2D5" type="Path2D" parent="Paths"]
-curve = SubResource( 50 )
+curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D5"]
 position = Vector2( 665, 509 )
@@ -794,7 +183,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D5/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="Path2D6" type="Path2D" parent="Paths"]
-curve = SubResource( 51 )
+curve = SubResource( 8 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D6"]
 position = Vector2( 281, 74 )
@@ -820,7 +209,7 @@ facing_at = 180.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
-[connection signal="body_entered" from="Gate" to="Player" method="_on_Gate_body_entered"]
+[connection signal="body_entered" from="Exit" to="Player" method="_on_Exit_body_entered"]
 [connection signal="giftpicked" from="Gifts/Gift1" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="giftpicked" from="Gifts/Gift2" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="giftpicked" from="Gifts/Gift3" to="Player" method="_on_Gift_giftpicked"]

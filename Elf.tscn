@@ -22,13 +22,9 @@ region = Rect2( 128, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 16, 24 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 24 )
 
@@ -44,7 +40,11 @@ region = Rect2( 0, 0, 16, 24 )
 atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 16, 24 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 24 )
+
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
@@ -56,12 +56,7 @@ animations = [ {
 "name": "side",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "upidle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 13 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0
@@ -80,33 +75,38 @@ animations = [ {
 "loop": true,
 "name": "sideidle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "upidle",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=11]
+[sub_resource type="CapsuleShape2D" id=12]
 radius = 7.0
 height = 10.0
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 0, 0, 60, 53, 100, 0, 60, -53 )
 
 [node name="Elf" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 10 )
+frames = SubResource( 11 )
 animation = "downidle"
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="ViewArea" type="Area2D" parent="."]
 rotation = 1.5708
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ViewArea"]
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="Light2D" type="Light2D" parent="ViewArea"]
 rotation = -1.5708
