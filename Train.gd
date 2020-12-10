@@ -13,7 +13,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Do path
-	if follow and running:
+	if follow: # and running:
 		follow.set_offset(follow.get_offset() + SPEED * delta)
 
 func _on_Elf_playerfound():

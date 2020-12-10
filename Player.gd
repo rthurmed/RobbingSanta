@@ -30,7 +30,7 @@ func _physics_process(delta):
 	if gifts_picked < gift_count:
 		status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
 	else:
-		status.text = "Go to the gate!"
+		status.text = "Find the exit!"
 	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -51,9 +51,9 @@ func _physics_process(delta):
 
 # Switch to _on_Any_playerfound
 func _on_Elf_playerfound():
-	$ResetTimer.start()
-	found = true
-	pass
+	if $ResetTimer.is_stopped():
+		$ResetTimer.start()
+		found = true
 
 func _on_Gift_giftpicked():
 	gifts_picked += 1
@@ -68,5 +68,6 @@ func _on_Exit_body_entered(body):
 		win = true
 
 func _on_Any_playerfound():
-	$ResetTimer.start()
-	found = true
+	if $ResetTimer.is_stopped():
+		$ResetTimer.start()
+		found = true
