@@ -10,15 +10,15 @@ region = Rect2( 0, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 24 )
+region = Rect2( 48, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 24 )
+region = Rect2( 16, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 16, 24 )
+region = Rect2( 32, 0, 16, 24 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -27,14 +27,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "win",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -95,5 +95,9 @@ __meta__ = {
 wait_time = 2.0
 
 [node name="NextSceneTimer" type="Timer" parent="."]
+
+[node name="MainCamera" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
 [connection signal="timeout" from="ResetTimer" to="." method="_on_ResetTimer_timeout"]
 [connection signal="timeout" from="NextSceneTimer" to="." method="_on_NextSceneTimer_timeout"]

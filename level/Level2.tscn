@@ -43,9 +43,6 @@ format = 1
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2( -440, 1880 )
 

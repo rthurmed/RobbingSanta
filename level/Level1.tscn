@@ -93,11 +93,6 @@ shape = SubResource( 2 )
 position = Vector2( 109, -23 )
 next_scene = ExtResource( 8 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-smoothing_enabled = true
-smoothing_speed = 3.0
-
 [node name="Gifts" type="Node" parent="."]
 
 [node name="Gift1" parent="Gifts" instance=ExtResource( 5 )]
