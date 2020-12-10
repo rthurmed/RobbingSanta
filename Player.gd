@@ -8,6 +8,8 @@ var gifts_picked = 0
 var found = false
 var win = false
 
+export (PackedScene) var next_scene
+
 func _process(delta):
 	if Input.is_action_just_released("quit"):
 		get_tree().quit()
@@ -63,7 +65,8 @@ func _on_ResetTimer_timeout():
 
 func _on_Exit_body_entered(body):
 	if body.name == "Player" and gifts_picked >= gift_count:
-		$CanvasLayer/YOUWIN.visible = true
+		# $CanvasLayer/YOUWIN.visible = true
+		$NextSceneTimer.start()
 		status.text = ""
 		win = true
 
@@ -71,3 +74,7 @@ func _on_Any_playerfound():
 	if $ResetTimer.is_stopped():
 		$ResetTimer.start()
 		found = true
+
+func _on_NextSceneTimer_timeout():
+	if next_scene:
+		get_tree().change_scene_to(next_scene)

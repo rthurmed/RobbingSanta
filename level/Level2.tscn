@@ -93,14 +93,14 @@ rotate = false
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrainTracks/Path2D1"]
-position = Vector2( 264.073, 767.16 )
+position = Vector2( 264.076, 692.722 )
 offset = 621.024
 rotate = false
 
 [node name="Train" parent="TrainTracks/Path2D1/PathFollow2D" instance=ExtResource( 6 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="TrainTracks/Path2D1"]
-position = Vector2( 264.011, 2023.06 )
+position = Vector2( 264.014, 1955.98 )
 offset = 1881.93
 rotate = false
 
@@ -111,7 +111,7 @@ position = Vector2( 49, 0 )
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrainTracks/Path2D2"]
-position = Vector2( 264.028, 1675.15 )
+position = Vector2( 264.031, 1609 )
 offset = 1536.22
 rotate = false
 
@@ -122,14 +122,14 @@ position = Vector2( 97, 0 )
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrainTracks/Path2D3"]
-position = Vector2( 264.06, 1031.31 )
+position = Vector2( 264.063, 955.163 )
 offset = 885.441
 rotate = false
 
 [node name="Train" parent="TrainTracks/Path2D3/PathFollow2D" instance=ExtResource( 6 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="TrainTracks/Path2D3"]
-position = Vector2( 264.047, 298.163 )
+position = Vector2( 264.037, 225.079 )
 offset = 153.161
 rotate = false
 

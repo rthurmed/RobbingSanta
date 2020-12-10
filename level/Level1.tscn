@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/foregroundtilemap.tres" type="TileSet" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Gift.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Elf.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/Evasion.ogg" type="AudioStream" id=5]
-[ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=6]
-[ext_resource path="res://assets/obstacletilemap.tres" type="TileSet" id=7]
+[ext_resource path="res://assets/obstacletilemap.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=2]
+[ext_resource path="res://Elf.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/foregroundtilemap.tres" type="TileSet" id=4]
+[ext_resource path="res://Gift.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Evasion.ogg" type="AudioStream" id=7]
+[ext_resource path="res://level/Level2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 440, 280 )
@@ -48,7 +49,7 @@ _data = {
 
 [node name="GroundTileMap" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0
@@ -58,7 +59,7 @@ tile_data = PoolIntArray( -2752504, 1, 0, -2752503, 1, 0, -2752502, 1, 0, -27525
 
 [node name="ObstacleTileMap" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 collision_layer = 3
@@ -68,7 +69,7 @@ tile_data = PoolIntArray( -1966088, 6, 0, -1966087, 6, 0, -1966086, 6, 0, -19660
 
 [node name="ForegroundTileMap" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 format = 1
@@ -88,8 +89,9 @@ position = Vector2( 314, 777 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 shape = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 109, -23 )
+next_scene = ExtResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -98,28 +100,28 @@ smoothing_speed = 3.0
 
 [node name="Gifts" type="Node" parent="."]
 
-[node name="Gift1" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift1" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 391, 72 )
 
-[node name="Gift2" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift2" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 562, 342 )
 
-[node name="Gift3" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift3" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 658, 77 )
 
-[node name="Gift4" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift4" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 861, 356 )
 
-[node name="Gift5" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift5" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 162, 315 )
 
-[node name="Gift6" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift6" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 561, 95 )
 
-[node name="Gift7" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift7" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 939, 77 )
 
-[node name="Gift8" parent="Gifts" instance=ExtResource( 3 )]
+[node name="Gift8" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 167, 502 )
 
 [node name="Paths" type="Node" parent="."]
@@ -132,7 +134,7 @@ position = Vector2( 522, 117 )
 rotation = 1.97247
 rotate = false
 
-[node name="Elf" parent="Paths/Path2D1/PathFollow2D" instance=ExtResource( 4 )]
+[node name="Elf" parent="Paths/Path2D1/PathFollow2D" instance=ExtResource( 3 )]
 rotation = -1.97247
 
 [node name="Path2D2" type="Path2D" parent="Paths"]
@@ -142,7 +144,7 @@ curve = SubResource( 4 )
 position = Vector2( 582, 158 )
 rotate = false
 
-[node name="Elf" parent="Paths/Path2D2/PathFollow2D" instance=ExtResource( 4 )]
+[node name="Elf" parent="Paths/Path2D2/PathFollow2D" instance=ExtResource( 3 )]
 
 [node name="Path2D3" type="Path2D" parent="Paths"]
 curve = SubResource( 5 )
@@ -152,7 +154,7 @@ position = Vector2( 760, 466 )
 rotation = 0.00280157
 rotate = false
 
-[node name="Elf" parent="Paths/Path2D3/PathFollow2D" instance=ExtResource( 4 )]
+[node name="Elf" parent="Paths/Path2D3/PathFollow2D" instance=ExtResource( 3 )]
 
 [node name="Path2D4" type="Path2D" parent="Paths"]
 curve = SubResource( 6 )
@@ -162,7 +164,7 @@ position = Vector2( 533, 461 )
 rotation = 7.47703e-05
 rotate = false
 
-[node name="Elf" parent="Paths/Path2D4/PathFollow2D1" instance=ExtResource( 4 )]
+[node name="Elf" parent="Paths/Path2D4/PathFollow2D1" instance=ExtResource( 3 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Paths/Path2D4"]
 position = Vector2( 435.015, 342 )
@@ -170,7 +172,7 @@ rotation = 0.00176417
 offset = 200.0
 rotate = false
 
-[node name="Elf" parent="Paths/Path2D4/PathFollow2D2" instance=ExtResource( 4 )]
+[node name="Elf" parent="Paths/Path2D4/PathFollow2D2" instance=ExtResource( 3 )]
 
 [node name="Path2D5" type="Path2D" parent="Paths"]
 curve = SubResource( 7 )
@@ -180,7 +182,7 @@ position = Vector2( 665, 509 )
 rotation = 0.0144996
 rotate = false
 
-[node name="Elf" parent="Paths/Path2D5/PathFollow2D" instance=ExtResource( 4 )]
+[node name="Elf" parent="Paths/Path2D5/PathFollow2D" instance=ExtResource( 3 )]
 
 [node name="Path2D6" type="Path2D" parent="Paths"]
 curve = SubResource( 8 )
@@ -190,24 +192,24 @@ position = Vector2( 281, 74 )
 rotation = 0.0120044
 rotate = false
 
-[node name="Elf" parent="Paths/Path2D6/PathFollow2D" instance=ExtResource( 4 )]
+[node name="Elf" parent="Paths/Path2D6/PathFollow2D" instance=ExtResource( 3 )]
 
 [node name="StadingElfs" type="Node" parent="."]
 
 [node name="Node2D1" type="Node2D" parent="StadingElfs"]
 
-[node name="Elf" parent="StadingElfs/Node2D1" instance=ExtResource( 4 )]
+[node name="Elf" parent="StadingElfs/Node2D1" instance=ExtResource( 3 )]
 position = Vector2( 215, 93 )
 facing_at = 90.0
 
 [node name="Node2D2" type="Node2D" parent="StadingElfs"]
 position = Vector2( 929, 509 )
 
-[node name="Elf" parent="StadingElfs/Node2D2" instance=ExtResource( 4 )]
+[node name="Elf" parent="StadingElfs/Node2D2" instance=ExtResource( 3 )]
 facing_at = 180.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 7 )
 autoplay = true
 [connection signal="body_entered" from="Exit" to="Player" method="_on_Exit_body_entered"]
 [connection signal="giftpicked" from="Gifts/Gift1" to="Player" method="_on_Gift_giftpicked"]
