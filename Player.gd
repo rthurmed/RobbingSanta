@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 100
+const SPEED = 4500
 
 onready var gift_count = get_tree().get_current_scene().get_node("Gifts").get_child_count()
 onready var status = $CanvasLayer/Status
@@ -48,7 +48,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("move_down"):
 		velocity.y += 1
 	
-	move_and_collide(velocity.normalized() * SPEED * delta)
+	move_and_slide(velocity.normalized() * SPEED * delta)
 	
 	if velocity == Vector2():
 		$AnimatedSprite.play("idle")
