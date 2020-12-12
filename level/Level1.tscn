@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/obstacletilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/foregroundtilemap.tres" type="TileSet" id=4]
 [ext_resource path="res://Gift.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/Evasion.ogg" type="AudioStream" id=7]
 [ext_resource path="res://level/Level2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -202,10 +201,6 @@ position = Vector2( 929, 509 )
 
 [node name="Elf" parent="StadingElfs/Node2D2" instance=ExtResource( 3 )]
 facing_at = 180.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-autoplay = true
 [connection signal="body_entered" from="Exit" to="Player" method="_on_Exit_body_entered"]
 [connection signal="giftpicked" from="Gifts/Gift1" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="giftpicked" from="Gifts/Gift2" to="Player" method="_on_Gift_giftpicked"]

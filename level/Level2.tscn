@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Gift.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Train.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Elf.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Evasion.ogg" type="AudioStream" id=8]
 [ext_resource path="res://level/Level3.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -134,10 +133,6 @@ offset = 153.161
 rotate = false
 
 [node name="Train" parent="TrainTracks/Path2D3/PathFollow2D2" instance=ExtResource( 6 )]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-autoplay = true
 [connection signal="body_entered" from="Exit" to="Player" method="_on_Exit_body_entered"]
 [connection signal="giftpicked" from="Gifts/Gift1" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="giftpicked" from="Gifts/Gift2" to="Player" method="_on_Gift_giftpicked"]

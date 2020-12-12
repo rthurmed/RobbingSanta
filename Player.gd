@@ -11,10 +11,13 @@ var win = false
 var exiting = false
 
 export (PackedScene) var next_scene
+export var soundtrack = true
 
 func _ready():
 	status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
 	$ExitArrow.visible = false
+	if soundtrack:
+		$AudioStreamPlayer.play()
 
 func _process(delta):
 	if Input.is_action_just_released("quit"):
