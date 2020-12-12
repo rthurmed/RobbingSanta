@@ -4,11 +4,17 @@ const SPEED = 100
 
 onready var gift_count = get_tree().get_current_scene().get_node("Gifts").get_child_count()
 onready var status = $CanvasLayer/Status
+onready var exit = get_tree().get_current_scene().get_node("Exit")
 var gifts_picked = 0
 var found = false
 var win = false
+var exiting = false
 
 export (PackedScene) var next_scene
+
+func _ready():
+	status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
+	$ExitArrow.visible = false
 
 func _process(delta):
 	if Input.is_action_just_released("quit"):
@@ -29,10 +35,8 @@ func _physics_process(delta):
 		$AnimatedSprite.play("idle")
 		return
 	
-	if gifts_picked < gift_count:
-		status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
-	else:
-		status.text = "Find the exit!"
+	if exiting:
+		$ExitArrow.rotation = get_angle_to(exit.global_position)
 	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -59,6 +63,12 @@ func _on_Elf_playerfound():
 
 func _on_Gift_giftpicked():
 	gifts_picked += 1
+	if gifts_picked < gift_count:
+		status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
+	else:
+		status.text = "Find the exit!"
+		$ExitArrow.visible = true
+		exiting = true
 
 func _on_ResetTimer_timeout():
 	get_tree().reload_current_scene()
