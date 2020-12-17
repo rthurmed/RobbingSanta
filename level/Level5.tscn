@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/obstacletilemap.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/foregroundtilemap.tres" type="TileSet" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gift.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 62.1289
+
+[node name="Level5" type="Node2D"]
+
+[node name="GroundTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="ObstacleTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="ForegroundTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2( 0, 265 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource( 1 )
+
+[node name="Gifts" type="Node" parent="."]
+
+[node name="Gift1" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 0, 107 )
+[connection signal="body_entered" from="Exit" to="Player" method="_on_Exit_body_entered"]
+[connection signal="giftpicked" from="Gifts/Gift1" to="Player" method="_on_Gift_giftpicked"]

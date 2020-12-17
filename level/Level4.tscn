@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/foregroundtilemap.tres" type="TileSet" id=2]
@@ -8,40 +8,41 @@
 [ext_resource path="res://Elf.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/block-spritesheet.png" type="Texture" id=7]
 [ext_resource path="res://Spotlight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level/Level5.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 159.028
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 208, 89, 0, 0, 0, 0, 207, -28, 0, 0, 0, 0, 138, -28, 0, 0, 0, 0, 138, 89, 0, 0, 0, 0, 208, 89 )
 }
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 415, -23, 0, 0, 0, 0, 290, -23, 0, 0, 0, 0, 290, 6, 0, 0, 0, 0, 383, 6, 0, 0, 0, 0, 383, 99, 0, 0, 0, 0, 415, 98, 0, 0, 0, 0, 415, -23 )
 }
 
-[sub_resource type="Curve2D" id=8]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 322, 122, 0, 0, 0, 0, 322, 130, 0, 0, 0, 0, 353, 130, 0, 0, 0, 0, 353, 182, 0, 0, 0, 0, 306, 182, 0, 0, 0, 0, 306, 195, 0, 0, 0, 0, 371, 195, 0, 0, 0, 0, 371, 122, 0, 0, 0, 0, 322, 122 )
 }
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 7 )
 region = Rect2( 224, 144, 32, 32 )
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=6]
 _data = {
 "points": PoolVector2Array( 4.06797, 39.5175, -4.06797, -39.5175, -75, 326, -63.3442, 0.774852, 63.3442, -0.774852, 10, 261, 0, -30.3051, 0, 30.3051, 223, 479, 49.0151, 0.790567, -49.0151, -0.790567, 70, 533, -10.4031, 14.0047, 10.4031, -14.0047, -75, 327 )
 }
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( 20.7744, 8.17354, -20.7744, -8.17354, 101, 990, -12.9414, 56.5337, 12.9414, -56.5337, 18, 579, -68.1129, 3.40564, 68.1129, -3.40564, 100, 484, -22.4772, -53.4686, 22.4772, 53.4686, 220, 571, -35.3269, -112.389, 35.3269, 112.389, 288, 795, 55.4023, -23.3452, -55.4023, 23.3452, 257, 1021, 11.2386, 11.5792, -11.2386, -11.5792, 101, 990 )
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=8]
 _data = {
 "points": PoolVector2Array( 96.3974, 10.7773, -96.3974, -10.7773, 192, 705, -5.98742, -105.379, 5.98742, 105.379, 66, 861, -53.8867, -9.57987, 53.8867, 9.57987, 232, 973, 5.38867, 88.015, -5.38867, -88.015, 341, 828, 83.2251, -3.59245, -83.2251, 3.59245, 192, 705 )
 }
@@ -68,6 +69,7 @@ tile_data = PoolIntArray( -589828, 0, 0, -327684, 0, 0, -65540, 3, 0, 1769488, 4
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -61 )
+next_scene = ExtResource( 9 )
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2( 231, 1276 )
@@ -104,7 +106,7 @@ position = Vector2( 8, 228 )
 [node name="Paths" type="Node" parent="."]
 
 [node name="Path2D1" type="Path2D" parent="Paths"]
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D1"]
 position = Vector2( 161.977, -28 )
@@ -114,7 +116,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D1/PathFollow2D" instance=ExtResource( 6 )]
 
 [node name="Path2D2" type="Path2D" parent="Paths"]
-curve = SubResource( 7 )
+curve = SubResource( 3 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D2"]
 position = Vector2( 300.135, 6 )
@@ -124,14 +126,14 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D2/PathFollow2D1" instance=ExtResource( 6 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Paths/Path2D2"]
-position = Vector2( 415, 83.1068 )
+position = Vector2( 415, 83.1071 )
 offset = 380.919
 rotate = false
 
 [node name="Elf" parent="Paths/Path2D2/PathFollow2D2" instance=ExtResource( 6 )]
 
 [node name="Path2D3" type="Path2D" parent="Paths"]
-curve = SubResource( 8 )
+curve = SubResource( 4 )
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Paths/Path2D3"]
 position = Vector2( 322, 122 )
@@ -150,29 +152,29 @@ facing_at = 90.0
 [node name="SpriteElfWatchTower1" type="Sprite" parent="Watchtowers"]
 position = Vector2( 266, 446 )
 z_index = 48
-texture = SubResource( 2 )
+texture = SubResource( 5 )
 flip_h = true
 
 [node name="SpriteElfWatchTower2" type="Sprite" parent="Watchtowers"]
 position = Vector2( -23, 778 )
 z_index = 48
-texture = SubResource( 2 )
+texture = SubResource( 5 )
 
 [node name="SpriteElfWatchTower3" type="Sprite" parent="Watchtowers"]
 position = Vector2( 377, 757 )
 z_index = 48
-texture = SubResource( 2 )
+texture = SubResource( 5 )
 flip_h = true
 
 [node name="SpriteElfWatchTower4" type="Sprite" parent="Watchtowers"]
 position = Vector2( -8, 805 )
 z_index = 48
-texture = SubResource( 2 )
+texture = SubResource( 5 )
 
 [node name="Spotlights" type="Node" parent="."]
 
 [node name="Path2D1" type="Path2D" parent="Spotlights"]
-curve = SubResource( 4 )
+curve = SubResource( 6 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spotlights/Path2D1"]
 position = Vector2( -75, 326 )
@@ -181,7 +183,7 @@ rotation = -1.64795
 [node name="Spotlight" parent="Spotlights/Path2D1/PathFollow2D" instance=ExtResource( 8 )]
 
 [node name="Path2D2" type="Path2D" parent="Spotlights"]
-curve = SubResource( 5 )
+curve = SubResource( 7 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Spotlights/Path2D2"]
 position = Vector2( 171.219, 501.659 )
@@ -192,7 +194,7 @@ rotate = false
 [node name="Spotlight" parent="Spotlights/Path2D2/PathFollow2D1" instance=ExtResource( 8 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Spotlights/Path2D2"]
-position = Vector2( 101, 990 )
+position = Vector2( 101.001, 990.001 )
 rotation = -2.47818
 offset = 1369.17
 rotate = false
@@ -200,12 +202,11 @@ rotate = false
 [node name="Spotlight" parent="Spotlights/Path2D2/PathFollow2D2" instance=ExtResource( 8 )]
 
 [node name="Path2D3" type="Path2D" parent="Spotlights"]
-curve = SubResource( 6 )
+curve = SubResource( 8 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spotlights/Path2D3"]
-position = Vector2( 320.544, 919.709 )
+position = Vector2( 320.544, 919.708 )
 rotation = -2.47818
-scale = Vector2( 1, 1 )
 offset = 571.517
 rotate = false
 
