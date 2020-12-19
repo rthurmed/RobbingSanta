@@ -23,7 +23,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -372, 1957, 0, 0, 0, 0, 637, 1957, 0, 0, 0, 0, 637, 1975, 0, 0, 0, 0, -372, 1975, 0, 0, 0, 0, -372, 1957 )
+"points": PoolVector2Array( 0, 0, 0, 0, -372, 1957, 0, 0, 0, 0, 637, 1957, 0, 0, 0, 0, 637, 1973, 0, 0, 0, 0, -372, 1973, 0, 0, 0, 0, -372, 1957 )
 }
 
 [sub_resource type="Curve2D" id=5]
@@ -131,12 +131,20 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D3/PathFollow2D" instance=ExtResource( 6 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Paths/Path2D3"]
-position = Vector2( 632.996, 1974.91 )
+position = Vector2( 575.532, 1973 )
 rotation = 3.09929e-05
-offset = 1024.2
+offset = 1078.89
 rotate = false
 
 [node name="Elf" parent="Paths/Path2D3/PathFollow2D2" instance=ExtResource( 6 )]
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Paths/Path2D3"]
+position = Vector2( 102.666, 1973 )
+rotation = 3.09929e-05
+offset = 1554.47
+rotate = false
+
+[node name="Elf" parent="Paths/Path2D3/PathFollow2D3" instance=ExtResource( 6 )]
 
 [node name="Path2D4" type="Path2D" parent="Paths"]
 curve = SubResource( 5 )
@@ -200,6 +208,7 @@ rotate = false
 [connection signal="playerfound" from="Paths/Path2D2/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D3/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D3/PathFollow2D2/Elf" to="Player" method="_on_Elf_playerfound"]
+[connection signal="playerfound" from="Paths/Path2D3/PathFollow2D3/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D4/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D5/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D6/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
