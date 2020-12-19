@@ -11,25 +11,31 @@ var win = false
 var exiting = false
 
 export (PackedScene) var next_scene
-export var soundtrack = true
 
 func _ready():
 	status.text = "Collect all gifts: " + str(gifts_picked) + "/" + str(gift_count)
 	$ExitArrow.visible = false
-	if soundtrack:
+	if $"/root/Configs".music:
 		$AudioStreamPlayer.play()
 
 func _process(delta):
 	if Input.is_action_just_released("quit"):
 		get_tree().quit()
+	
 	if Input.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
+	
 	if Input.is_action_just_released("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
+	
 	if Input.is_action_just_pressed("skip_level"):
 		$NextSceneTimer.start()
 		status.text = "Skipping level..."
 		found = true
+	
+	if Input.is_action_just_pressed("mute"):
+		$AudioStreamPlayer.playing = not $AudioStreamPlayer.playing
+		$"/root/Configs".music = $AudioStreamPlayer.playing
 
 func _physics_process(delta):
 	var velocity = Vector2()
