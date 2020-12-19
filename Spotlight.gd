@@ -2,7 +2,7 @@ extends Area2D
 
 signal playerfound
 
-const SPEED = 150
+const SPEED = 120
 
 var follow
 var running = true
