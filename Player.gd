@@ -26,6 +26,10 @@ func _process(delta):
 		get_tree().reload_current_scene()
 	if Input.is_action_just_released("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
+	if Input.is_action_just_pressed("skip_level"):
+		$NextSceneTimer.start()
+		status.text = "Skipping level..."
+		found = true
 
 func _physics_process(delta):
 	var velocity = Vector2()

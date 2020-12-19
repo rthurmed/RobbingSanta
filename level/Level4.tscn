@@ -167,7 +167,6 @@ tile_data = PoolIntArray( 262232, 0, 0, 262233, 0, 0, 262237, 0, 0, 262238, 0, 0
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -61 )
 next_scene = ExtResource( 9 )
-soundtrack = false
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2( 1038, 1036 )
@@ -369,7 +368,7 @@ position = Vector2( 159, 0 )
 curve = SubResource( 21 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D12"]
-position = Vector2( 920.648, 350 )
+position = Vector2( 920.557, 350 )
 offset = 482.636
 rotate = false
 
