@@ -13,5 +13,5 @@ func _process(delta):
 		$AudioStreamPlayer.playing = not $AudioStreamPlayer.playing
 		$"/root/Configs".music = $AudioStreamPlayer.playing
 
-func _on_PlayButton_pressed():
-		get_tree().change_scene("res://level/Level1.tscn")
+func _on_QuitButton_pressed():
+	get_tree().quit()

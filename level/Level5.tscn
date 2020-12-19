@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/groundtilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/obstacletilemap.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Elf.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Train.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Spotlight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://EndScreen.tscn" type="PackedScene" id=11]
 
 [sub_resource type="NavigationPolygon" id=3]
 vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -133,6 +134,7 @@ format = 1
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 49, 0 )
+next_scene = ExtResource( 11 )
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2( 904, 552 )
