@@ -17,7 +17,7 @@ signal playerfound
 
 func _ready():
 	space_state = get_world_2d().direct_space_state
-	facing = facing_at
+	facing = deg2rad(facing_at)
 	if get_parent() is PathFollow2D:
 		follow = get_parent()
 

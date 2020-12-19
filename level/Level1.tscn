@@ -200,7 +200,7 @@ facing_at = 90.0
 position = Vector2( 929, 509 )
 
 [node name="Elf" parent="StadingElfs/Node2D2" instance=ExtResource( 3 )]
-facing_at = 180.0
+facing_at = -140.0
 [connection signal="body_entered" from="Exit" to="Player" method="_on_Exit_body_entered"]
 [connection signal="giftpicked" from="Gifts/Gift1" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="giftpicked" from="Gifts/Gift2" to="Player" method="_on_Gift_giftpicked"]

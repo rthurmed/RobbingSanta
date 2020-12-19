@@ -131,7 +131,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D3/PathFollow2D" instance=ExtResource( 6 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Paths/Path2D3"]
-position = Vector2( 575.532, 1973 )
+position = Vector2( 575.533, 1973 )
 rotation = 3.09929e-05
 offset = 1078.89
 rotate = false

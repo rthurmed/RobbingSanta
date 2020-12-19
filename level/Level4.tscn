@@ -10,17 +10,17 @@
 [ext_resource path="res://Spotlight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://level/Level5.tscn" type="PackedScene" id=9]
 
-[sub_resource type="NavigationPolygon" id=12]
+[sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
-[sub_resource type="OccluderPolygon2D" id=13]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=14]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
-[sub_resource type="TileSet" id=15]
+[sub_resource type="TileSet" id=4]
 0/name = "block-spritesheet.png 0"
 0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
@@ -28,101 +28,101 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/region = Rect2( 0, 240, 16, 16 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 13 )
+0/occluder = SubResource( 2 )
 0/navigation_offset = Vector2( 0, 0 )
-0/navigation = SubResource( 12 )
+0/navigation = SubResource( 1 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 14 )
+0/shape = SubResource( 3 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 14 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=5]
 radius = 159.028
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=6]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 208, 89, 0, 0, 0, 0, 207, -28, 0, 0, 0, 0, 138, -28, 0, 0, 0, 0, 138, 89, 0, 0, 0, 0, 208, 89 )
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 415, -23, 0, 0, 0, 0, 290, -23, 0, 0, 0, 0, 290, 6, 0, 0, 0, 0, 383, 6, 0, 0, 0, 0, 383, 99, 0, 0, 0, 0, 415, 99, 0, 0, 0, 0, 415, -23 )
 }
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=8]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1398, 82, 0, 0, 0, 0, 1398, 479, 0, 0, 0, 0, 1374, 479, 0, 0, 0, 0, 1374, 82, 0, 0, 0, 0, 1398, 82 )
 }
 
-[sub_resource type="Curve2D" id=11]
+[sub_resource type="Curve2D" id=9]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 931, 114, 0, 0, 0, 0, 931, 42, 0, 0, 0, 0, 827, 42, 0, 0, 0, 0, 827, 63, 0, 0, 0, 0, 911, 63, 0, 0, 0, 0, 911, 142, 0, 0, 0, 0, 971, 142, 0, 0, 0, 0, 971, 114, 0, 0, 0, 0, 931, 114 )
 }
 
-[sub_resource type="Curve2D" id=16]
+[sub_resource type="Curve2D" id=10]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1295, 82, 0, 0, 0, 0, 1295, 479, 0, 0, 0, 0, 1315, 479, 0, 0, 0, 0, 1315, 82, 0, 0, 0, 0, 1295, 82 )
 }
 
-[sub_resource type="Curve2D" id=17]
+[sub_resource type="Curve2D" id=11]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 758, -30, 0, 0, 0, 0, 758, -41, 0, 0, 0, 0, 818, -41, 0, 0, 0, 0, 818, -81, 0, 0, 0, 0, 839, -81, 0, 0, 0, 0, 839, -30, 0, 0, 0, 0, 758, -30 )
 }
 
-[sub_resource type="Curve2D" id=19]
+[sub_resource type="Curve2D" id=12]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1215, 530, 0, 0, 0, 0, 1236, 530, 0, 0, 0, 0, 1236, 706, 0, 0, 0, 0, 1215, 706, 0, 0, 0, 0, 1215, 530 )
 }
 
-[sub_resource type="Curve2D" id=20]
+[sub_resource type="Curve2D" id=13]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1696, 650, 0, 0, 0, 0, 1696, 702, 0, 0, 0, 0, 1551, 702, 0, 0, 0, 0, 1551, 650, 0, 0, 0, 0, 1696, 650 )
 }
 
-[sub_resource type="Curve2D" id=21]
+[sub_resource type="Curve2D" id=14]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1008, 252, 0, 0, 0, 0, 770, 252, 0, 0, 0, 0, 770, 350, 0, 0, 0, 0, 931, 350, 0, 0, 0, 0, 931, 305, 0, 0, 0, 0, 1008, 305, 0, 0, 0, 0, 1008, 252 )
 }
 
-[sub_resource type="Curve2D" id=22]
+[sub_resource type="Curve2D" id=15]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1076, 302, 0, 0, 0, 0, 1076, 285, 0, 0, 0, 0, 1028, 286, 0, 0, 0, 0, 1028, 345, 0, 0, 0, 0, 1003, 345, 0, 0, 0, 0, 1003, 394, 0, 0, 0, 0, 971, 394, 0, 0, 0, 0, 971, 404, 0, 0, 0, 0, 1030, 404, 0, 0, 0, 0, 1030, 365, 0, 0, 0, 0, 1076, 365, 0, 0, 0, 0, 1076, 302 )
 }
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 7 )
 region = Rect2( 224, 144, 32, 32 )
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=17]
 _data = {
 "points": PoolVector2Array( 4.06797, 39.5175, -4.06797, -39.5175, -75, 326, -63.3442, 0.774852, 63.3442, -0.774852, 10, 261, 0, -30.3051, 0, 30.3051, 223, 479, 49.0151, 0.790567, -49.0151, -0.790567, 70, 533, -10.4031, 14.0047, 10.4031, -14.0047, -75, 327 )
 }
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=18]
 _data = {
 "points": PoolVector2Array( 20.7744, 8.17354, -20.7744, -8.17354, 101, 990, -12.9414, 56.5337, 12.9414, -56.5337, 18, 579, -68.1129, 3.40564, 68.1129, -3.40564, 100, 484, -22.4772, -53.4686, 22.4772, 53.4686, 220, 571, -35.3269, -112.389, 35.3269, 112.389, 288, 795, 55.4023, -23.3452, -55.4023, 23.3452, 257, 1021, 11.2386, 11.5792, -11.2386, -11.5792, 101, 990 )
 }
 
-[sub_resource type="Curve2D" id=8]
+[sub_resource type="Curve2D" id=19]
 _data = {
 "points": PoolVector2Array( 10.059, 14.0354, -10.059, -14.0354, 231, 845, -14.7143, -94.0854, 14.7143, 94.0854, 145, 924, -53.8867, -9.57987, 53.8867, 9.57987, 317, 1048, 3.58366, 52.8172, -3.58366, -52.8172, 596, 957, 33.8809, 18.9938, -33.8809, -18.9938, 555, 880, 66.1588, 22.788, -66.1588, -22.788, 410, 890, 54.7307, 48.1726, -54.7307, -48.1726, 231, 845 )
 }
 
-[sub_resource type="Curve2D" id=9]
+[sub_resource type="Curve2D" id=20]
 _data = {
 "points": PoolVector2Array( -100.178, 2.70752, 100.178, -2.70752, 521, 524, -19.8552, -9.02507, 19.8552, 9.02507, 644, 651, -2.70752, -24.3677, 2.70752, 24.3677, 700, 780, 33.3928, -18.0501, -33.3928, 18.0501, 672, 848, 14.4401, 8.12257, -14.4401, -8.12257, 616, 826, 3.61003, 18.9527, -3.61003, -18.9527, 501, 603, -54.1504, 8.12257, 54.1504, -8.12257, 521, 524 )
 }
 
-[sub_resource type="Curve2D" id=10]
+[sub_resource type="Curve2D" id=21]
 _data = {
 "points": PoolVector2Array( 27.5586, -81.0547, -27.5586, 81.0547, 482, 391, 69.707, -23.776, -69.707, 23.776, 525, 559, 2.16146, 1.08073, -2.16146, -1.08073, 411, 457, -59.4401, 58.8997, 59.4401, -58.8997, 409, 319, -18.9128, 43.7695, 18.9128, -43.7695, 521, 257, -33.5026, 23.776, 33.5026, -23.776, 535, 163, -43.7695, -0.540364, 43.7695, 0.540364, 651, 139, -19.4531, -23.2357, 19.4531, 23.2357, 739, 186, 18.9128, -32.4219, -18.9128, 32.4219, 746, 267, 18.9128, 3.24219, -18.9128, -3.24219, 656, 289, 25.9375, -11.888, -25.9375, 11.888, 535, 310, 14.5898, -41.6081, -14.5898, 41.6081, 482, 391 )
 }
@@ -157,7 +157,7 @@ tile_data = PoolIntArray( -589828, 0, 0, -524275, 9, 0, -524274, 9, 0, -458739, 
 
 [node name="HideableTileMap" type="TileMap" parent="."]
 z_index = 10
-tile_set = SubResource( 15 )
+tile_set = SubResource( 4 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 2
@@ -172,7 +172,7 @@ next_scene = ExtResource( 9 )
 position = Vector2( 1038, 1036 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="Gifts" type="Node" parent="."]
 
@@ -218,7 +218,7 @@ position = Vector2( 968, 353 )
 [node name="Paths" type="Node" parent="."]
 
 [node name="Path2D1" type="Path2D" parent="Paths"]
-curve = SubResource( 2 )
+curve = SubResource( 6 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D1"]
 position = Vector2( 161.977, -28 )
@@ -228,7 +228,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D1/PathFollow2D" instance=ExtResource( 6 )]
 
 [node name="Path2D2" type="Path2D" parent="Paths"]
-curve = SubResource( 3 )
+curve = SubResource( 7 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D2"]
 position = Vector2( 300.154, 6 )
@@ -245,7 +245,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D2/PathFollow2D2" instance=ExtResource( 6 )]
 
 [node name="Path2D3" type="Path2D" parent="Paths"]
-curve = SubResource( 4 )
+curve = SubResource( 8 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D3"]
 position = Vector2( 1398, 138.437 )
@@ -263,10 +263,10 @@ rotate = false
 
 [node name="Path2D4" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 4 )
+curve = SubResource( 8 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D4"]
-position = Vector2( 1398, 197.293 )
+position = Vector2( 1398, 197.292 )
 offset = 115.305
 rotate = false
 
@@ -281,10 +281,10 @@ rotate = false
 
 [node name="Path2D5" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 11 )
+curve = SubResource( 9 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D5"]
-position = Vector2( 911, 78.8278 )
+position = Vector2( 911, 78.8276 )
 offset = 290.865
 rotate = false
 
@@ -292,7 +292,7 @@ rotate = false
 
 [node name="Path2D6" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 16 )
+curve = SubResource( 10 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D6"]
 position = Vector2( 1295, 372.956 )
@@ -310,7 +310,7 @@ rotate = false
 
 [node name="Path2D7" type="Path2D" parent="Paths"]
 position = Vector2( 319, -1 )
-curve = SubResource( 16 )
+curve = SubResource( 10 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D7"]
 position = Vector2( 1315, 284.345 )
@@ -327,7 +327,7 @@ rotate = false
 
 [node name="Path2D8" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 17 )
+curve = SubResource( 11 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D8"]
 position = Vector2( 758, -30 )
@@ -338,7 +338,7 @@ rotate = false
 
 [node name="Path2D10" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 19 )
+curve = SubResource( 12 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D10"]
 position = Vector2( 1215, 530 )
@@ -348,7 +348,7 @@ rotate = false
 
 [node name="Path2D11" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 20 )
+curve = SubResource( 13 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D11"]
 position = Vector2( 1675.1, 650 )
@@ -359,7 +359,7 @@ rotate = false
 
 [node name="Path2D12" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 21 )
+curve = SubResource( 14 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D12"]
 position = Vector2( 920.557, 350 )
@@ -369,7 +369,7 @@ rotate = false
 [node name="Elf" parent="Paths/Path2D12/PathFollow2D1" instance=ExtResource( 6 )]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Paths/Path2D12"]
-position = Vector2( 841.174, 252 )
+position = Vector2( 841.173, 252 )
 offset = 166.928
 rotate = false
 
@@ -377,7 +377,7 @@ rotate = false
 
 [node name="Path2D13" type="Path2D" parent="Paths"]
 position = Vector2( 159, 0 )
-curve = SubResource( 22 )
+curve = SubResource( 15 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Paths/Path2D13"]
 position = Vector2( 1046.48, 285.615 )
@@ -397,40 +397,40 @@ facing_at = 90.0
 [node name="SpriteElfWatchTower1" type="Sprite" parent="Watchtowers"]
 position = Vector2( 266, 446 )
 z_index = 48
-texture = SubResource( 5 )
+texture = SubResource( 16 )
 flip_h = true
 
 [node name="SpriteElfWatchTower2" type="Sprite" parent="Watchtowers"]
 position = Vector2( -23, 778 )
 z_index = 48
-texture = SubResource( 5 )
+texture = SubResource( 16 )
 
 [node name="SpriteElfWatchTower3" type="Sprite" parent="Watchtowers"]
 position = Vector2( 377, 757 )
 z_index = 48
-texture = SubResource( 5 )
+texture = SubResource( 16 )
 flip_h = true
 
 [node name="SpriteElfWatchTower4" type="Sprite" parent="Watchtowers"]
 position = Vector2( -8, 805 )
 z_index = 48
-texture = SubResource( 5 )
+texture = SubResource( 16 )
 
 [node name="SpriteElfWatchTower5" type="Sprite" parent="Watchtowers"]
 position = Vector2( 501, 720 )
 z_index = 48
-texture = SubResource( 5 )
+texture = SubResource( 16 )
 
 [node name="SpriteElfWatchTower6" type="Sprite" parent="Watchtowers"]
 position = Vector2( 571, 330 )
 z_index = 48
-texture = SubResource( 5 )
+texture = SubResource( 16 )
 flip_h = true
 
 [node name="Spotlights" type="Node" parent="."]
 
 [node name="Path2D1" type="Path2D" parent="Spotlights"]
-curve = SubResource( 6 )
+curve = SubResource( 17 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spotlights/Path2D1"]
 position = Vector2( 181.216, 407.998 )
@@ -440,7 +440,7 @@ offset = 354.073
 [node name="Spotlight" parent="Spotlights/Path2D1/PathFollow2D" instance=ExtResource( 8 )]
 
 [node name="Path2D2" type="Path2D" parent="Spotlights"]
-curve = SubResource( 7 )
+curve = SubResource( 18 )
 
 [node name="PathFollow2D1" type="PathFollow2D" parent="Spotlights/Path2D2"]
 position = Vector2( 171.219, 501.659 )
@@ -459,7 +459,7 @@ rotate = false
 [node name="Spotlight" parent="Spotlights/Path2D2/PathFollow2D2" instance=ExtResource( 8 )]
 
 [node name="Path2D3" type="Path2D" parent="Spotlights"]
-curve = SubResource( 8 )
+curve = SubResource( 19 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spotlights/Path2D3"]
 position = Vector2( 508.036, 1016.91 )
@@ -470,7 +470,7 @@ rotate = false
 [node name="Spotlight" parent="Spotlights/Path2D3/PathFollow2D" instance=ExtResource( 8 )]
 
 [node name="Path2D4" type="Path2D" parent="Spotlights"]
-curve = SubResource( 9 )
+curve = SubResource( 20 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spotlights/Path2D4"]
 position = Vector2( 539.892, 689.402 )
@@ -481,7 +481,7 @@ rotate = false
 [node name="Spotlight" parent="Spotlights/Path2D4/PathFollow2D" instance=ExtResource( 8 )]
 
 [node name="Path2D5" type="Path2D" parent="Spotlights"]
-curve = SubResource( 10 )
+curve = SubResource( 21 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Spotlights/Path2D5"]
 position = Vector2( 595.78, 140.941 )
