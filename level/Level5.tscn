@@ -152,16 +152,16 @@ shape = SubResource( 2 )
 [node name="Gifts" type="Node" parent="."]
 
 [node name="Gift1" parent="Gifts" instance=ExtResource( 5 )]
-position = Vector2( 182, 262 )
+position = Vector2( 229, 174 )
 
 [node name="Gift2" parent="Gifts" instance=ExtResource( 5 )]
-position = Vector2( 267, 48 )
+position = Vector2( 265, 56 )
 
 [node name="Gift3" parent="Gifts" instance=ExtResource( 5 )]
-position = Vector2( 232, 79 )
+position = Vector2( 225, 91 )
 
 [node name="Gift4" parent="Gifts" instance=ExtResource( 5 )]
-position = Vector2( 198, 40 )
+position = Vector2( 204, 37 )
 
 [node name="Gift5" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 181, 84 )
@@ -176,7 +176,7 @@ position = Vector2( 488, 84 )
 position = Vector2( 466, 49 )
 
 [node name="Gift9" parent="Gifts" instance=ExtResource( 5 )]
-position = Vector2( -450, 565 )
+position = Vector2( -449, 574 )
 
 [node name="Gift10" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( -447, 877 )
@@ -198,6 +198,48 @@ position = Vector2( 436, 463 )
 
 [node name="Gift16" parent="Gifts" instance=ExtResource( 5 )]
 position = Vector2( 631, 1011 )
+
+[node name="Gift17" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 523, 71 )
+
+[node name="Gift18" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 248, 30 )
+
+[node name="Gift19" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 174, 55 )
+
+[node name="Gift20" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 177, 23 )
+
+[node name="Gift21" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 221, 59 )
+
+[node name="Gift22" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 448, 82 )
+
+[node name="Gift23" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 487, 23 )
+
+[node name="Gift24" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 543, 32 )
+
+[node name="Gift25" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 453, 25 )
+
+[node name="Gift26" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 414, 92 )
+
+[node name="Gift27" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 533, 97 )
+
+[node name="Gift28" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 260, 95 )
+
+[node name="Gift29" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 305, 33 )
+
+[node name="Gift30" parent="Gifts" instance=ExtResource( 5 )]
+position = Vector2( 644, 535 )
 
 [node name="Paths" type="Node" parent="."]
 
@@ -278,7 +320,7 @@ rotate = false
 curve = SubResource( 13 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D7"]
-position = Vector2( 310, 962.432 )
+position = Vector2( 311.57, 962.443 )
 rotation = 0.016831
 offset = 155.431
 rotate = false
@@ -446,6 +488,20 @@ flip_h = true
 [connection signal="giftpicked" from="Gifts/Gift14" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="giftpicked" from="Gifts/Gift15" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="giftpicked" from="Gifts/Gift16" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift17" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift18" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift19" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift20" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift21" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift22" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift23" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift24" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift25" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift26" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift27" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift28" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift29" to="Player" method="_on_Gift_giftpicked"]
+[connection signal="giftpicked" from="Gifts/Gift30" to="Player" method="_on_Gift_giftpicked"]
 [connection signal="playerfound" from="Paths/Path2D/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D2/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
 [connection signal="playerfound" from="Paths/Path2D3/PathFollow2D/Elf" to="Player" method="_on_Elf_playerfound"]
