@@ -101,3 +101,9 @@ func _on_Any_playerfound():
 func _on_NextSceneTimer_timeout():
 	if next_scene:
 		get_tree().change_scene_to(next_scene)
+
+func _on_Santa_body_entered(body):
+	if body.name == "Player":
+		if $ResetTimer.is_stopped():
+			$ResetTimer.start()
+			found = true
